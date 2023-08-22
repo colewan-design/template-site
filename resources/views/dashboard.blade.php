@@ -7,7 +7,7 @@
     <meta content='yes' name='apple-mobile-web-app-capable'/>
     <meta content='yes' name='mobile-web-app-capable'/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>GoodBasket</title>
+    <title>Site Title</title>
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>

@@ -7,10 +7,8 @@
             <v-card class="elevation-12" v-if="registerForm.account_num">
                   <v-row>
                     <v-col cols="12" md="12">
-                      <v-card-text class="mt-5" >
-                        <h1
-                          class="text-center display-2 blue-grey--text text--accent-3"
-                        >Create New Account</h1>
+                      <v-card-text>
+                        <h1>Create New Account</h1>
                         <v-text-field
                           disabled
                           v-model="registerForm.account_num"
@@ -47,7 +45,7 @@
                         ></v-text-field>
                       </v-card-text>
                       <div class="text-center ma-3">
-                        <v-btn @click.prevent="register()" rounded color="blue-grey accent-3" dark>Register</v-btn>
+                        <v-btn @click.prevent="register()" rounded dark>Register</v-btn>
                       </div>
                     </v-col>
                   </v-row>
@@ -111,8 +109,7 @@ export default {
     },
     methods: {
       verify() {
-        // this.$store.dispatch('Auth/register', this.form);
-        // this.dialog = true;
+
         axios.post('verify', this.form)
           .then(res => {
             this.registerForm.account_num = res.data.data[0].acct_number

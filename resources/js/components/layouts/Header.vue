@@ -2,8 +2,9 @@
   <nav>
     <v-row>
       <v-col>
-        <v-app-bar app color="#4d783f" class="d-none d-sm-flex text-white" height="90px">
-          <v-app-bar-title class="ml-5 font-weight-black">Site Name</v-app-bar-title>
+        <!-- for tablet and desktop, >600 viewport -->
+        <v-app-bar app height="90px">
+          <v-app-bar-title class="ml-5 font-weight-black">Title</v-app-bar-title>
           <v-spacer></v-spacer>
           <template v-slot:append>
             <router-link v-for="(item, i) in items" :key="i" :to="item.path" v-slot="{ navigate }" custom>
@@ -12,16 +13,14 @@
                 <span>{{ item.title }}</span>
               </v-btn>
             </router-link>
-       
-            
-       
+
             <router-link v-if="!customer_data"  :to="'/login'" v-slot="{ navigate }" custom>
               <v-btn class="ma-2"  @click="navigate" role="link">
                 <v-icon class="mr-1">mdi-login-variant</v-icon>
                 <span>Login</span>
               </v-btn>
             </router-link>
-              
+          
             <v-btn class="ma-2" @click="userLogout" v-if="customer_data" >
               <v-icon icon="mdi-account-arrow-left-outline" class="mr-1"></v-icon>
               <span>Logout</span>
@@ -42,21 +41,21 @@
         <router-link   :to="'/product-list'" v-slot="{ navigate }" custom>
               <v-btn class="ma-2"  @click="navigate" role="link">
                 <v-icon class="mr-1">mdi-login-variant</v-icon>
-                <span>Head-nav 1</span>
+                <span>Navigation</span>
               </v-btn>
         </router-link>
 
         <router-link   :to="'/'" v-slot="{ navigate }" custom>
               <v-btn class="ma-2"  @click="navigate" role="link">
                 <v-icon class="mr-1">mdi-login-variant</v-icon>
-                <span>Head-nav 2</span>
+                <span>Navigation</span>
               </v-btn>
         </router-link>
 
         <router-link :to="'/how-it-works'" v-slot="{ navigate }" custom>
               <v-btn class="ma-2"  @click="navigate" role="link">
                 <v-icon class="mr-1">mdi-login-variant</v-icon>
-                <span>Head-nav 3</span>
+                <span>Navigation</span>
               </v-btn>
         </router-link>
 
@@ -95,12 +94,14 @@
       },
       drawer: false,
       items: [
-        { title: 'Nav 1', icon: 'mdi-food-apple-outline', path:'/product-list' },
-        { title: 'Nav 2', icon: 'mdi-information-variant', path:'/' },
-        { title: 'Nav 3', icon: 'mdi-lightbulb-question-outline', path:'/how-it-works' },
-     
+        { title: 'Navigation', icon: 'mdi-food-apple-outline', path:'/product-list' },
+        { title: 'Navigation', icon: 'mdi-information-variant', path:'/' },
+        { title: 'Navigation', icon: 'mdi-lightbulb-question-outline', path:'/how-it-works' },
+        // { title: '', icon: 'mdi-cart', path:'/' },
+        // { title: 'Login', icon: 'mdi-login-variant', path:'/login' },
       ],
       selectedItem: 0,
+      // customer_data: {}
     }),
 
     methods: {
@@ -109,7 +110,9 @@
       },
 
       async userLogout() {
-        this.$store.dispatch('auth/logout');
+        // this.$store.dispatch('logout');
+        localStorage.removeItem("user_data");
+        window.location.reload();
       }
     },
 
@@ -117,5 +120,14 @@
       this.customer_data = localStorage.getItem('user_data')
       console.log(this.customer_data)
     },
+  
+
+    // computed: {
+    //   customer_data() {
+    //     console.log('customer_data')
+    //     console.log(this.customer_data)
+    //     return this.$store.getters.customerData;
+    //   }
+    // }
   }
 </script>

@@ -8,7 +8,7 @@
         height="200px">
 
         <v-card-text class="black--text">
-          <strong>Copyright &copy; Christian Colewan</strong>
+          <strong>Copyright &copy; 2023</strong>
         </v-card-text>
       </v-card>
     </v-footer>

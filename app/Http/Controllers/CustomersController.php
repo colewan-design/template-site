@@ -70,24 +70,4 @@ class CustomersController extends Controller
         
         return $customer_ref;
     }
-
-    public function isEnablesORDissabled($id,$boolean){
-        $customers = Customers::find($id);
-        $customers->isEnabled = $boolean;
-        $customers->save();
-
-    }
-
-    public function index(){
-        $customers =  DB::table('customers')
-        ->orderByRaw('customers.updated_at DESC NULLS LAST')
-        ->orderByRaw('customers.created_at DESC NULLS LAST') 
-        ->whereNull('customers.deleted_at')
-        ->get();
-
-        $chunks_customers= collect($customers)->chunk(100);
-        foreach($chunks_customers as $chunks_customer){
-            return $chunks_customer;
-        }
-    }
 }

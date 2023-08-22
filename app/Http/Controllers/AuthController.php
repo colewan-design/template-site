@@ -26,10 +26,9 @@ class AuthController extends Controller
             $customer_token_abilities = [
                 'userProfile-update',
                 'orders-crud',
+                'cart-crud',
                 'orderRatings-crud',
                 'mealCrafting-crud',
-                'user-dashboard',
-                'user-cart',
             ];
             /**
              * Users with the 'Admin' role will be issued with a token with the ff. abilities/permissions
@@ -45,7 +44,6 @@ class AuthController extends Controller
                 'orders-delete',
                 'orderRatings-read',
                 'orderRatings-delete',
-                'user-dashboard',
             ];
             /**
              * Users with the 'Merchandiser' role will be issued with a token with the ff. abilities/permissions
@@ -61,25 +59,21 @@ class AuthController extends Controller
                 'baskets-crud',
                 'basketItems-crud',
                 'additional-crud',
-                'user-dashboard',
             ];
 
             if($user->role === 'Admin') {
                 $user_data->token = $user->createToken($token_hash, $admin_token_abilities)->plainTextToken;
-                $user_data->abilities = $admin_token_abilities;
             } else if($user->role === 'Merchandiser') {
                 $user_data->token = $user->createToken($token_hash, $merchandiser_token_abilities)->plainTextToken;
-                $user_data->abilities = $merchandiser_token_abilities;
             } else if($user->role === 'Customer') {
                 $user_data->token = $user->createToken($token_hash, $customer_token_abilities)->plainTextToken;
-                $user_data->abilities = $customer_token_abilities;
-                
             } else {
                 return $this->returnResponse(401, 'error', null, 'Unauthorized. Please register or login with your account');
             }
             $user_data->customer_ref = $user_customer_data->customer_ref;
             $user_data->customer_fname = $user_customer_data->customer_fname;
             $user_data->customer_lname = $user_customer_data->customer_lname;
+            $user_data->abilities = $customer_token_abilities;
 
             return $this->returnResponse(200, 'success', $user_data, 'Welcome, '.$user->name);
         } else {
@@ -89,7 +83,6 @@ class AuthController extends Controller
     }
 
     public function userLogout(Request $request) {
-        // $request->user()->currentAccessToken()->delete();
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

@@ -61,26 +61,14 @@ class BasketItemsController extends Controller
     }
 
     public function userDashboardItems(Request $request) {
-     
         $lib_basket_items =  DB::table('lib_basket_items')
-                            ->leftjoin('file_uploads', 'file_uploads.reference_id', '=', 'lib_basket_items.id')
-                            ->orderByRaw('lib_basket_items.updated_at DESC NULLS LAST')
-                            ->orderByRaw('lib_basket_items.created_at DESC NULLS LAST') 
-                            ->whereNull('lib_basket_items.deleted_at')
-                            ->get([
-                                'lib_basket_items.id',
-                                'lib_basket_items.basket_item_name', 
-                                'lib_basket_items.category',  
-                                'lib_basket_items.sku',   
-                                'lib_basket_items.item_amount',       
-                                'lib_basket_items.created_at',    
-                                'file_uploads.reference_id',   
-                                'file_uploads.name',  
-                                'file_uploads.path', 
-                            ]);
+                            ->whereNull('lib_basket_items.deleted_at')->get();
+
+                            // dd($lib_basket_items);
+              	
         $chunks_lib_basket_items = collect($lib_basket_items)->chunk(100);
-        foreach($chunks_lib_basket_items as $chunk_lib_basket_item){
-            return $chunk_lib_basket_item;
+        foreach($chunks_lib_basket_items as $chunk_lib_basket_items){
+            return $chunk_lib_basket_items;
         }
         
     }

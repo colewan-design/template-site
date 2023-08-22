@@ -14,7 +14,7 @@
             <v-row no-gutters>
               <v-col>
                 <v-img
-                  src="https://gcdnb.pbrd.co/images/yyvLFCMctIZf.png?o=1"
+                  src=""
                   max-height="200"
                   height="120"
                 ></v-img>
@@ -22,7 +22,6 @@
             </v-row>
             <v-row dense>
               <v-col>
-                <h1 class="align-center">Join Us Today</h1>
               </v-col>
             </v-row>
             
@@ -54,16 +53,10 @@
             </v-row>
           </v-card-text>
           <v-card-actions class="justify-center">
-            <v-btn class="mt-2 font-weight-bold text-white justify-center" variant="flat" color="#2D4D22"
+            <v-btn variant="flat"
               @click="step = 2">Proceed</v-btn
             >
-            <!-- <v-divider></v-divider>
-            <h2 class="align-center">Or:</h2>
-            <v-card column class="ml-5">
-              <v-btn class="ma-2" variant="outlined" color="red"
-                >Sign Up With Google</v-btn>
-              <v-btn variant="outlined" color="blue">Sign Up With Facebook</v-btn>
-            </v-card> -->
+          
           </v-card-actions>
         </v-card>
       </v-window-item>
@@ -80,7 +73,7 @@
           <v-row no-gutters>
             <v-col>
               <v-img
-                src="https://gcdnb.pbrd.co/images/yyvLFCMctIZf.png?o=1"
+                src=""
                 height="120"
                 max-height="200"
               ></v-img>
@@ -88,7 +81,7 @@
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <h1 class="align-center">Almost there!</h1>
+              <h1>Almost there!</h1>
             </v-col>
           </v-row>
 
@@ -319,164 +312,5 @@
 </script>
 
 <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@1,500&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-  body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  .sign-up-body{
-      padding: 0;
-      padding-right: 2rem;
-      padding-top: 2rem;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-  .left_section {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #ffffff;
-  }
-
-  .company_name {
-    color: #ffffff;
-    margin-left: 5px;
-    font-weight: bold;
-    font-family: 'Gelasio', serif;
-    font-style: italic;
-  }
-
-  .right_section {
-    display: flex;
-    align-items: center;
-  }
-
-  .content_section {
-    margin-top: 150px;
-    margin-left: 100px;
-  }
-
-  h1 {
-    font-size: 39px;
-    font-weight: 600;
-    font-style: italic;
-    font-family: 'Gelasio', serif;
-    color: #2d4d22;
-  }
-
-  p {
-    font-size: 20px;
-    color: #000;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: white;
-  }
-
-  .company_name {
-    margin-left: 10px;
-    font-size: 50px;
-    color: white;
-  }
-
-  .user_section {
-    display: flex;
-    align-items: center;
-  }
-
-  .button_set_a {
-    width: 158px;
-    height: 52px;
-    border-radius: 13px;
-    background-color: #2d4d22;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    color: #ffffff;
-  }
-
-  .sign_up_button {
-    width: 158px;
-    height: 52px;
-    border-radius: 13px;
-    background-color: #c7c47f;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    color: #2d4d22;
-  }
-
-  h1 {
-    font-size: 45px;
-    font-weight: 600;
-    font-style: italic;
-    font-family: 'Gelasio', serif;
-    color: #2d4d22;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  h3 {
-    font-size: 25px;
-    font-weight: 600;
-    /* font-style: italic; */
-    font-family: 'Gelasio', sans-serif;
-    color: #2d4d22;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .row {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .column {
-    text-align: center;
-  }
-
-  .banner {
-    object-fit: cover;
-    width: 100%;
-    height: 300px;
-    background-image: url('https://images.pexels.com/photos/2252482/pexels-photo-2252482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-position: center;
-    background-size: cover;
-    opacity: 0.75;
-  }
-
-  .next_button {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px; /* Increased margin for spacing */
-  }
-
-  .next_button button {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #2d4d22;
-    border: none;
-    border-radius: 13px;
-    padding: 10px 20px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  .next_button .button_set_a {
-    font-size: 20px;
-  }
+ 
 </style>

@@ -1,21 +1,30 @@
 <template>
   
     <v-container class="user-plan-body">
-      <v-row>
-        <v-col>
-          <v-icon>
-            
-          </v-icon>
-        </v-col>
-      </v-row>
-      <v-row class="plan-card-row">
-        <v-col  v-for="plan in plans" :key="plan.id" cols="4">
-            <v-card class="subscription-card" outlined :height="100">
-            <v-card-text>
-             {{ plan.name }}
-            </v-card-text>
-          </v-card>
-        </v-col>
+      <v-card width="500" title="Choose your Subscription">
+          <v-container>
+              <v-row>
+                  <router-link to="/user-account" v-slot="{ navigate }" custom>
+                      <v-btn class="button_set_a d-flex d-sm-none ma-2" @click="navigate" role="link">User Account</v-btn>
+                  </router-link>
+              </v-row>
+          </v-container>
+      </v-card>
+      <v-row class="plan-card-row pd-left-2" v-for="plan in plans" :key="plan.id">
+        <v-card class="subscription-card" outlined width="600">
+          <v-card-title class="headline">Premium Subscription</v-card-title>
+          <v-card-subtitle class="subheading">Only $9.99/month</v-card-subtitle>
+          <v-card-text>
+            <v-list dense>
+              <v-list-item v-for="detail in plan.details" :key="detail.id">
+                <v-list-item-content>{{ detail.label }}</v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn color="primary">Subscribe Now</v-btn>
+          </v-card-actions>
+        </v-card>
       </v-row>
     </v-container>
 </template>

@@ -43,23 +43,7 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::post('/additional-update/{id}', [AdditionalController::class, 'update'])->middleware(['ability:additional-crud,additional-update']);
         Route::delete('/additional-delete/{id}', [AdditionalController::class, 'destroy'])->middleware(['ability:additional-crud,additional-delete']);
     });
-
-  
-    
 }); 
-
-Route::prefix('/Cart')->group(function($route){
-    Route::get('/index', [CartController::class, 'index']);
-    Route::post('/cart-store', [CartController::class, 'store']);
-    Route::post('/cart-update/{id}', [CartController::class, 'update']);
-    Route::delete('/cart-delete/{id}', [CartController::class, 'destroy']);
-    Route::get('/search/cart',  [CartController::class, 'search']);
-});
-
-Route::prefix('/Customers')->group(function($route){
-    Route::get('/index', [CustomersController::class, 'index']);
-    Route::post('/enabled-or-dissabled/{id}/{boolean}', [CustomersController::class, 'isEnablesORDissabled']);
-});
 
 Route::prefix('/Merchandizer')->group(function($route){
     Route::get('/index', [MerchandizerController::class, 'index']);
@@ -81,6 +65,13 @@ Route::prefix('/Basket_Items')->group(function($route){
     Route::get('/search/basket-items',  [BasketItemsController::class, 'search']);
 });
 
+Route::prefix('/Cart')->group(function($route){
+    Route::get('/index', [CartController::class, 'index']);
+    Route::post('/cart-store', [CartController::class, 'store']);
+    Route::post('/cart-update/{id}', [CartController::class, 'update']);
+    Route::delete('/cart-delete/{id}', [CartController::class, 'destroy']);
+    Route::get('/search/cart',  [CartController::class, 'search']);
+});
 
 Route::prefix('/Order')->group(function($route){
     Route::get('/index', [OrderController::class, 'index']);

@@ -3,15 +3,15 @@
         <v-window v-model="tab" :touch="{left: null, right: null}">
             <v-window-item :value="1" key="sub2">
                 <v-row justify="space-around">
-                    <v-card max-width="600" flat class="user-account-top-nav" height="60">
+                    <v-card width="600" style="padding-left: 1rem;padding-top: 1rem;">
                         <v-container>
                             <v-row>
-                                <v-col style="padding-top: 1rem;">
+                                <v-col>
                                     <router-link to="/user-dashboard" v-slot="{ navigate }" custom>
                                         <v-icon @click="navigate">
                                             mdi-menu-left
                                         </v-icon>
-                                         User Account
+                                         Dashboard
                                     </router-link>
                                 </v-col>
                             </v-row>
@@ -27,8 +27,8 @@
                                 <v-col cols="8">
                                     <v-container class="user-account-banner">
                                         <v-row>
-                                            <v-col  class="p-32 fw-900">
-                                                {{ customerData.customer_fname }} {{ customerData.customer_lname }}
+                                            <v-col>
+                                            <h1> John A. Doe</h1>
                                             </v-col>
 
                                         </v-row>
@@ -106,8 +106,7 @@
                                         </v-container>
                                     </v-col>
                                     <v-col>
-                                        <router-link to="/user-review" v-slot="{ navigate }" custom>
-                                        <v-container @click="navigate">
+                                        <v-container>
                                             <v-row>
                                                 <v-btn> <v-icon size="32">mdi-comment-processing</v-icon></v-btn>
                                             </v-row>
@@ -115,7 +114,6 @@
                                                 To Review
                                             </v-row>
                                         </v-container>
-                                        </router-link>
                                     </v-col>
 
                                     <v-col>
@@ -226,23 +224,29 @@
 
             <v-window-item :value="2" key="sub2">
             
-                <v-card max-width="600" flat class="user-account-top-nav" height="60">
+                <v-row justify="space-around">
+                    <v-card class="margin-1" width="600" height="50">
                         <v-container>
-                            <v-row>
-                                <v-col style="padding-top: 1rem;">
-                                        <v-icon @click="tab = 1">
-                                            mdi-menu-left
-                                        </v-icon>
-                                         Settings
-                                </v-col>
-                            </v-row>
+                        <v-row>
+                            <v-col cols="1">
+                                <v-icon @click="tab = 1">mdi-arrow-left</v-icon>
+                            </v-col>
+
+                            <v-col cols="8">
+                                <h2>Settings</h2>
+                            </v-col>
+                           
+
+                        </v-row>
                         </v-container>
                     </v-card>
-            
+                </v-row>
           
                     <v-container>
                         <v-row>
-                          
+                           <!-- <v-card-text>
+                            Account Information
+                           </v-card-text> -->
                            <router-link to="/user-profile" v-slot="{ navigate }" custom>
                                     <v-btn block @click="navigate" role="link"> Account Information</v-btn>
                                     <v-btn class="button_set_a d-none d-sm-flex ma-4 mx-auto" width="30em" @click="navigate" role="link">Account Information</v-btn>
@@ -305,12 +309,6 @@
   <script>
     export default {
       data: () => ({
-        customerData: {
-        token: '',
-        user_ref: '',
-        customer_fname: '',
-        customer_lname: '',
-      },
         tab: 1,
         deliveryInfo: [
           {
@@ -336,14 +334,6 @@
   
       }),
   
-      created() {
-        // fetch logged in user data
-            this.customer_data = localStorage.getItem('user_data');
-            if (this.customer_data) {
-            this.customerData = JSON.parse(this.customer_data);
-            console.log(this.customerData);
-            }
-        },
   
       methods: {
        
@@ -365,7 +355,6 @@
           .track-your-order-body{
           padding: 0;
           padding-right: 2rem;
-          padding-top: 2rem;
           margin: 0;
           box-sizing: border-box;
           
@@ -414,24 +403,6 @@
       }
       .margin-1{
           margin: .5rem;
-      }
-      .user-account-top-nav{
-        background-color: #40792d;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        color: white;
-      }
-      .p-16{
-        font-size: 16px;
-      }
-      .p-32{
-        font-size: 32px;
-      }
-      .fw-900{
-        font-weight: 900;
       }
   
      

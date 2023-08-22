@@ -8,9 +8,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-
-        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
         <!-- Styles -->
         <style>

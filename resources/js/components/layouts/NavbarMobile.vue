@@ -4,7 +4,6 @@
       class="d-sm-none"
       dark app
       :value="selectedItem"
-      color="cyan"
       grow
   >
       <v-btn v-for="(item, i) in items" :key="i">
@@ -23,10 +22,10 @@ export default {
       drawer: true,
       selectedItem: 0,
         items: [
-          { title: 'Home', icon: 'mdi-home' },
-          { title: 'QR', icon: 'mdi-qrcode' },
-          { title: 'Profile', icon: ' mdi-clipboard-account' },
-          { title: 'Activity', icon: 'mdi-view-list' },
+          { title: 'Navigation', icon: 'mdi-home' },
+          { title: 'Navigation', icon: 'mdi-qrcode' },
+          { title: 'Navigation', icon: ' mdi-clipboard-account' },
+          { title: 'Navigation', icon: 'mdi-view-list' },
         ],
       value: 2
     }

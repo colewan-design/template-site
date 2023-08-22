@@ -1,6 +1,21 @@
 <template>
     <v-container class="order-history-body">
-       <v-card width="600" style="padding-top: 2rem;">
+       <v-row>
+        <v-card width="600">
+            <v-container>
+                <v-row>
+                    
+                    <router-link to="/user-account" v-slot="{ navigate }" custom>
+                        <v-btn class="button_set_a d-flex d-sm-none ma-2" block @click="navigate" role="link">User Account</v-btn>
+                        <v-btn class="button_set_a d-none d-sm-flex ma-4 mx-auto" width="30em" @click="navigate" role="link">User Account</v-btn>
+                    </router-link>
+                
+        
+                </v-row>
+            </v-container>
+        </v-card>
+       </v-row>
+       <v-card width="600">
         <v-container>
             <v-row >
        
@@ -21,21 +36,7 @@
        </v-card>
       
         <v-window v-model="tab" :touch="{left: null, right: null}">
-            <v-window-item :value="1" key="sub2" class="padding-top">
-            <v-card max-width="600" flat class="user-account-top-nav" height="60">
-                    <v-container>
-                        <v-row>
-                            <v-col style="padding-top: 1rem;">
-                                <router-link to="/user-account" v-slot="{ navigate }" custom>
-                                    <v-icon @click="navigate">
-                                        mdi-menu-left
-                                    </v-icon>
-                                        Orders
-                                </router-link>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-card>
+            <v-window-item :value="1" key="sub2">
             <v-row v-for="n in 12" :key="n" justify="space-around">
                 <v-card class="margin-1" width="580">
                     <v-container>
@@ -861,18 +862,6 @@
            font-size:10px;
         }
        
-        .user-account-top-nav{
-        background-color: #40792d;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        color: white;
-      }
-      .padding-top{
-        padding-top: 5rem;
-      }
   
      
    }

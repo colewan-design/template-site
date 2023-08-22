@@ -19,7 +19,7 @@ class CartController extends Controller
         $chunks_lib_cart_items = collect($lib_cart_items)->chunk(100);
         foreach($chunks_lib_cart_items as $chunk_lib_cart_items){
         return $chunk_lib_cart_items;
-    }
+}
         
     }
 
@@ -27,17 +27,10 @@ class CartController extends Controller
     {
         // dd($request);
         $selectedItemName = $request->input('selectedItemName');
-        $selectedItemPrice = $request->input('selectedItemPrice');
-        $selectedItemQuantity = $request->input('selectedItemQuantity');
-        $customerData = $request->input('customerData'); // Retrieve the customerData from the JSON
-         // Fetch the customer token
-        $customerToken = $customerData['token'];
-        // dd($customerToken);
+    
         $cartItem = lib_cart_items::create([
             'item_name' => $selectedItemName,
-            'item_amount' => $selectedItemPrice,
-            'item_quantity' => $selectedItemQuantity,
-            'user_ref' => $customerToken, // Store user_ref in the cart item
+            // Other fields you want to set
         ]);
 
         return response()->json([

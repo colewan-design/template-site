@@ -34,6 +34,7 @@
                 align="center"
                 class="caption"
               ></v-list-item-subtitle>
+            <!-- </v-list-item-content> -->
           </v-list-item>
         </v-list-group>
       </v-list>
@@ -49,6 +50,10 @@
         <v-icon>{{item.icon}}</v-icon>
         <span>{{item.title}}</span>
       </v-btn>
+      <!-- <v-btn outlined>
+        <v-icon icon="mdi-login"></v-icon>
+        <span>Login</span>
+      </v-btn> -->
     </v-bottom-navigation>
   </div>
 </template>
@@ -61,10 +66,10 @@ export default {
       drawer: true,
       selectedItem: 0,
       items: [
-        { title: 'Products', icon: 'mdi-home', path:'' },
-        { title: 'About Us', icon: 'mdi-qrcode', path:'' },
-        { title: 'How it Works', icon: ' mdi-clipboard-account', path:'' },
-        { title: 'Subscribe', icon: 'mdi-view-list', path:'' },
+        { title: 'Navigation', icon: 'mdi-home', path:'' },
+        { title: 'Navigation', icon: 'mdi-qrcode', path:'' },
+        { title: 'Navigation', icon: ' mdi-clipboard-account', path:'' },
+        { title: 'Navigation', icon: 'mdi-view-list', path:'' },
         { title: 'Login', icon: 'mdi-view-list', path:'/login' },
       ],
       value: 2
@@ -78,9 +83,7 @@ export default {
         {
           this.drawer = false;
         }
-        // else if(window.innerWidth < 960){
-        //   this.drawer = true;
-        // }
+       
       },
       set()
       {

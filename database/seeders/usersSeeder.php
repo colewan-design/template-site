@@ -14,7 +14,6 @@ class usersSeeder extends Seeder
                     'email' => 'saheiadmin@gmail.com',
                     'password' => '$2a$12$YJ806tD38RL/UoRNkNprm..QY23PqJ3J6Aj2U96qUQJpPHsbzRj/C',
                     'customer_ref' => 'SA20230000',
-                    'role' => 'Admin',
                 ]);
             DB::table('customers')->delete();
             DB::table('customers')
@@ -32,7 +31,6 @@ class usersSeeder extends Seeder
                     'main_delivery_addr_brgy' => 'MAGSAYSAY, LOWER',
                     'main_delivery_addr_muncity' => 'BAGUIO CITY',
                     'main_delivery_addr_province' => 'Benguet',
-                    'role' => 'Admin',
                 ]);
         }
     }

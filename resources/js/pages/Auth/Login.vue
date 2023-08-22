@@ -3,14 +3,14 @@
     <v-main>
       <v-container class="fill-height login-body" fluid>
         <v-row align="center" justify="center">
-          <v-col cols="12" sm="8" md="6">
-            <v-card shaped color="rgba(237, 233, 228, .5)" class="elevation-12 login-card">
+          <v-col cols="12">
+            <v-card shaped class="elevation-12 login-card">
               <v-row dense>
                 <v-col cols="12">
-                  <v-img class="ml-3" contain height="150px" src="/img/icon/tiklis-pac-logo-transparent-bg.png"></v-img>
+                  <v-img class="ml-3" contain src=""></v-img>
                 </v-col>
                 <v-col cols="12">
-                  <v-img class="ml-3" contain height="100px" src="/img/icon/siged-tiklis.png"></v-img>
+                  <v-img class="ml-3" contain src=""></v-img>
                 </v-col>
               </v-row>
               
@@ -36,8 +36,8 @@
                     </v-form>
                   </v-card-text>
                   <div class="text-center ma-2">
-                    <v-btn class="text-white" block color="#4d783f" @click="login" dark><v-icon left>mdi-login-variant</v-icon>LOGIN</v-btn><br>
-                    <v-btn class="text-white" block color="#4d783f" @click="installPWA"><v-icon left>mdi-download</v-icon>Install App</v-btn>
+                    <v-btn block @click="login"><v-icon left>mdi-login-variant</v-icon>LOGIN</v-btn><br>
+                    <v-btn block @click="installPWA"><v-icon left>mdi-download</v-icon>Install App</v-btn>
                   </div>
                 </v-col>
               </v-row>
@@ -76,7 +76,7 @@ export default {
     },
     login() {
       // this.$store.dispatch('Auth/login', this.formLogin);
-      this.$store.dispatch('auth/login', this.formLogin);
+      this.$store.dispatch('login', this.formLogin);
       // this.$swal('', 'Successfully logged in', 'success');
     },
     installPWA() {
