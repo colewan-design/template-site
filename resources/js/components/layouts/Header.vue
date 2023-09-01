@@ -97,8 +97,7 @@
         { title: 'Navigation', icon: 'mdi-food-apple-outline', path:'/product-list' },
         { title: 'Navigation', icon: 'mdi-information-variant', path:'/' },
         { title: 'Navigation', icon: 'mdi-lightbulb-question-outline', path:'/how-it-works' },
-        // { title: '', icon: 'mdi-cart', path:'/' },
-        // { title: 'Login', icon: 'mdi-login-variant', path:'/login' },
+  
       ],
       selectedItem: 0,
       // customer_data: {}

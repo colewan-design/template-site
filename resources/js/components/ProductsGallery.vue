@@ -21,7 +21,7 @@
     <v-row>
         <v-expansion-panels>
             <v-expansion-panel>
-                <v-expansion-panel-title><p class="see-more">Click to see all products</p></v-expansion-panel-title>
+                <v-expansion-panel-title><p class="see-more">Click to see all</p></v-expansion-panel-title>
                 <v-expansion-panel-text>
                     <v-row class="justify-center">
                         <v-col v-for="item in products"

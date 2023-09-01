@@ -1,113 +1,49 @@
 <template>
     <v-container class="product-list-body">
-        <h1>Our Products</h1>
-            <p>Siged Tiklis, The Good Basket, is committed to providing organic and sustainably-sourced products. When you buy a basket, you'll be getting a balanced combination of fruits and vegetables, poultry products, and guilt-free snacks.</p>
+        <h1>Page Title</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quidem harum ducimus veniam laboriosam suscipit, repellendus reiciendis omnis. Eaque natus commodi eos autem non, culpa magnam eius quo nulla sapiente?</p>
 
             <div class = "flex-fill">
-                <!-- <v-row>
-                    <v-col
-                        v-for="item in basket_items"
-                        :key="item.id"
-                        cols="12"
-                        md="4"
-                        lg="4"
-                        xl="4"
-                        >
-                        <v-hover v-slot="{ isHovering, props }">
-                            <v-card class="mx-auto" color="grey-lighten-4" max-width="600" v-bind="props">
-                                <v-img :aspect-ratio="16/9" cover src="https://cdn.vuetifyjs.com/images/cards/kitchen.png">
-                                    <v-expand-transition>
-                                    <div
-                                        v-if="isHovering"
-                                        class="d-flex transition-fast-in-fast-out bg-orange-darken-2 v-card--reveal text-h2"
-                                        style="height: 100%;"
-                                    >
-                                    {{ item.basket_item_name }}
-                                    </div>
-                                    </v-expand-transition>
-                                    
-                                </v-img>
-
-                                <v-card-text class="pt-6">
-                                    <div class="font-weight-light text-grey text-h6 mb-2">
-                                    {{item.category }}
-                                    
-                                    </div>
-                                    
-
-                                    <h3 class="text-h4 font-weight-light text-orange mb-2">
-                                    {{item.created_at }}
-                                    </h3>
-
-                                    <div class="font-weight-light text-h6 mb-2">
-                                    Details
-                                    </div>
-                                </v-card-text>
-                            </v-card>
-                        </v-hover>
-                    </v-col>
-                </v-row>
-                <hr> -->
 
                 <v-row>
-                    <!-- <v-col cols="12" md="4" lg="4" xl="4">
-                        <v-parallax aspect-ratio="4/3" src="https://images.pexels.com/photos/1691180/pexels-photo-1691180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></v-parallax>
-                    </v-col> -->
+                   
                     <v-col cols="12">
                         <div>
-                            <h2>Vegetables</h2>
-                            <p>With Siged Tiklis, you can enjoy a wide range of hand-grown vegetables, sourced from groups such as the  Atok Organic Practitioners Association, Inc.</p>
-                            <p>We offer vegetables such as bulbs, leafy vegetables, cole crops, legumes, stems and shoots, fruit vegetables, and root and tuber crops.</p>
+                            <h2>Sub Section</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum autem quibusdam amet accusantium neque, sed voluptatum nemo. Facilis fugit iste quam consequuntur libero. Et unde sunt officiis qui totam! Quos.</p>
+                         
                             <products-gallery :category="'Vegetables'" :products="basket_items.filter(item => item.category == 'Vegetables')"></products-gallery>
                         </div>
                         
                         <div>
-                            <h2>Poultry</h2>
-                            <p>Siged Tiklis We provide ducks and native chickens, which can be delivered to you live or dressed. We also offer fresh free-range and native eggs.</p>
-                            <p>Our poultry sources are refreshed weekly to ensure freshness.</p>
+                            <h2>title</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis quam enim at soluta. Ullam, enim consequuntur! Neque tenetur non nesciunt nisi exercitationem amet quia, architecto, aperiam quibusdam dolores delectus consectetur!</p>
                             <products-gallery :category="'Poultry'" :products="basket_items.filter(item => item.category == 'Poultry')"></products-gallery>
                         </div>
 
                         <div>
-                            <h2>Seasonal Fruit</h2>
-                            <p>Siged Tiklis sources its seasonal fruit from different groups, such as the Atok Organic Practitioners Association, Inc. for highland vegetables and the Aduyon Organic Farmers Association (AOFA) for fruits and poultry supplies. We update our supply weekly to ensure freshness.</p>
-                            <p>Our range of seasonal fruit includes rambutan, indian mango, avocado, lemon green, and passion fruit.</p>
+                            <h2>title</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam reprehenderit accusamus at fuga porro qui natus mollitia, vitae ea corporis harum incidunt veniam ducimus pariatur officia voluptates tempore nisi. Incidunt!</p>
+                    
                             <products-gallery :category="'Fruits'" :products="basket_items.filter(item => item.category == 'Fruits')"></products-gallery>
                         </div>
 
                         <div>
-                            <h2>Herbs</h2>
-                            <p>Our hand-grown herbs are sure to bring your dish depth of flavor. You can enjoy lemon grass, mint, oregano, and rosemary with our services.</p>
+                            <h2>title</h2>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae molestiae aliquid quos, accusantium quia, cum modi eligendi voluptatem repellendus sit expedita beatae vitae minima sed? Mollitia harum dolores inventore esse?</p>
                             <products-gallery :category="'Herbs'" :products="basket_items.filter(item => item.category == 'Herbs')"></products-gallery>
                         </div>
                     </v-col>
                 </v-row>
                 <hr>
 
-                <v-row>
-                    <v-col cols="12" md="4" lg="4" xl="4">
-                        <v-parallax aspect-ratio="4/3" src="https://gcdnb.pbrd.co/images/OsG2FZm6LQhS.png?o=1"></v-parallax>
-                    </v-col>
-                    <v-col cols="12" md="8" lg="8" xl="8">
-                        <h1>Indigenous and Organic Products</h1>
-                        <p>With Siged Tiklis, you can enjoy a variety of indigenous and organic products.</p>
-
-                        <h1>Processed Products</h1>
-                        <!-- <v-img src = "https://gcdnb.pbrd.co/images/VT742efYvU7A.png?o=1" width = "200px" height ="200px"></v-img> -->
-                        <p>Siged Tiklis can provide a wide range of processed products. Choose from our selection of dehydrated fruits and vegetable snacks or treat yourself to our tomato and rhubarb spreads.</p>
-
-                        <h1>Ancestral and Domain-Based</h1>
-                        <p>Enjoy a wide range of Siged Tiklis' ancestral and domain-based products. We offer locally-produced heirloom rice, natural wild products, and more.</p>
-                        <!-- <v-btn block class="button_set_a mx-auto">Subscribe</v-btn> -->
-                    </v-col>
-                </v-row>
-                <hr>
+                
+              
 
                 <v-row>
                     <v-col>
-                        <h1>Cultivated With Love</h1>
-                        <p>With Siged Tilkis, every crop, fruit, and meal plan was designed with your health and enjoyment in mind. </p>
-                        <p>We are dedicated to delivering healthy, locally-sourced meals with every basket. Get yours now.</p>
+                        <h1>Title</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit ducimus in perferendis laborum facilis expedita mollitia suscipit eligendi accusamus voluptatibus repellat ipsa perspiciatis maxime consectetur, voluptate quibusdam reiciendis aperiam nisi!</p>
                         <v-btn block class="button_set_a mx-auto d-flex d-sm-none">Learn More</v-btn><!-- <600px viewport -->
                         <v-btn class="button_set_a mx-auto d-none d-sm-flex" width="30em">Learn More</v-btn><!-- >600px viewport -->
                     </v-col>
@@ -165,17 +101,7 @@
 
 
         computed : {
-            //   collection() {
-            //     if (this.search != '') {
-            //             return this.audits.filter(audits => {
-            //                 // Adjust the condition based on the property you want to search
-            //                 return audits.categoryName.toLowerCase().includes(this.search.toLowerCase());
-            //             });
-            //         } else {
-            //             return this.paginate(this.audits);
-            //         }
-
-            //     },
+          
         },
 
     }

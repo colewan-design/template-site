@@ -1,6 +1,6 @@
 {
-    "name": "B2C Tiklis App",
-    "short_name": "B2C Tiklis App",
+    "name": "CBOO Payroll App",
+    "short_name": "CBOO Payroll App",
     "icons": [
         {
               "src": "img/icon/B2C TIKLIS APP.jpg",
@@ -13,7 +13,7 @@
     "display": "standalone",
     "background_color": "#fff",
     "theme_color": "#000",
-    "description": "B2C Tiklis App",
+    "description": "CBOO Payroll App",
     "dir": "ltr",
     "lang": "en-US"
 }

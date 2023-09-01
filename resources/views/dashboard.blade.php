@@ -28,7 +28,7 @@
                                 <v-card flat style="height: 100vh; width: 100vw; overflow-y: auto;">
                                     <v-btn elevation="4" fab icon color="#2d4d22" large class="text-white"
                                         style="position: fixed !important; right: 2em !important; bottom: 5em !important; z-index: 99;">
-                                        <v-icon>mdi-cart</v-icon>
+                                        <v-icon>mdi-access-point</v-icon>
                                     </v-btn>
                                     <router-view></router-view>
                                 </v-card>
